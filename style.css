@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+@keyframes jelly {
+    0% {
+        transform: scaleX(1); /* Original size */
+    }
+    25% {
+        transform: scaleX(0.5); /* Thin out */
+    }
+    50% {
+        transform: scaleX(1.5); /* Grow larger */
+    }
+    75% {
+        transform: scaleX(0.8); /* Slightly thinner before final return */
+    }
+    100% {
+        transform: scaleX(1); /* Return to original size */
+    }
+}
+@keyframes moveFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes moveFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+body {
+    
+  background-color: #0d0c11;
+  color: #fff;
+  font-family: 'Merriweather', serif;
+  padding:0;
+  margin:0;
+  overflow-x: hidden; 
+ 
+}
+.box.WD {
+    right: 0; 
+    animation: moveFromRight 1.5s backwards;
+    
+}
+.box.NE {
+    right: 0; /* Start from right */
+    animation: moveFromRight 2.25s backwards;
+}
+
+
+
+/* Navigation styles */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+
+    color: #fff;
+    padding: 10px 0;
+    box-sizing: border-box;
+    z-index: 1000;
+
+    background: rgba(73, 96, 195, 0.081);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    justify-content: space-between; /* Aligns h1 to the left and ul to the right */
+    align-items: center; /* Centers items vertically */
+    padding: 0 20px; /* Adds padding for left and right spacing */
+}
+
+nav h1 {
+    margin: 0; /* Removes default margin */
+    font-size: 24px; /* Adjust font size as needed */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin: 0 15px;
+    border-radius: 25px;
+    height: 45px;
+    padding: 3px 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    animation: jelly .8s ease;
+}
+
+
+/* MAIN Content */
+
+
+section{
+    display:grid;
+    place-items: center;
+    align-content: center;
+    min-height: 101vh;
+}
+.content{
+    width: 75%;
+    max-width: 100%;
+}
+.content h1 {
+    font-size: 50px;
+    margin:0
+}
+.content p{
+    font-size: 25px;
+    margin-top:5px;
+    margin-bottom:30px;
+    text-align: justify;
+}
+.hidden{ /* before */
+    opacity: 0;
+    transition: all 1s;
+}
+.show{      /* after */
+    opacity: 1;
+}
+.left{
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.moveright{
+    transform: translateX(0);
+}
+.right{
+    transform: translateX(300%);
+    transition: all 5s;
+    opacity: 1;
+}
+
+.moveleft{
+    transform: translateX(-350%);
+    opacity: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+.interest{display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 50px; 
+}
+.box{
+    text-align: center;
+    height: 550px;
+    width: 400px;
+    padding:0px 30px;
+
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba(4, 251, 255, 0.37);
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.box h1{
+    margin-top: 10px;
+    font-size: 30px;
+}
+.box p{
+    font-size:17px;
+    text-align: justify;
+}
+
+
+/* First Page ==================================================== */
+.firstPage {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    gap: 20px; 
+    align-items: center; 
+}
+
+.firstPage img {
+    width: 300px; /* Ensure the image has a fixed width */
+    height: 400px; /* Ensure the image has a fixed height */
+    border: 1px solid white;
+    box-shadow: 0 8px 32px 0 rgb(26, 35, 96);
+    border-top-left-radius: 25%;
+}
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically in the .home div */
+}
+
+.home h1 {
+    
+    margin: 0;
+    font-size: 50px; /* Adjust as needed */
+}
+
+.home p {
+    margin: 0;
+    font-size: 25px; /* Adjust as needed */
+}
+/* Social Links - Place it under <p> */
+.social-links {
+    margin-top: 15px; /* Space between the <p> and icons */
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white; /* Set icon color to white */
+    text-decoration: none;
+}
+
+.social-links i {
+    transition: transform 0.3s ease;
+}
+
+.social-links i:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* particles ============================= */
+
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Behind all other elements */
+    background-color: #0d0c11; /* Optional: match background color */
+}
+
+/* Flipflop ==============================================================================*/
+.flipcontainer{
+    position:relative;
+    width: 250px;
+    height: 320px;
+    background-color: aquamarine;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.flipcard{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+.flipcard:hover{
+transform:rotateY(180deg);
+}
+.front{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: rgb(119, 193, 247);
+    color:#fff;
+}
+.back{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: rgb(161, 53, 255);
+    color:#fff;
+    transform:rotateY(180deg);
+
+}
+
+/* Contact ===============================================================================*/
+.line-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.line-divider hr {
+    border: none;
+    height: 1px;
+    width: 75%; /* Adjust this based on the section width */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    margin: 0;
+}
+
+.line-divider span {
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.Contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Optional: spacing between the columns */
+    padding: 20px; /* Optional: padding around the container */
+}
+.leftDetails h2 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.leftDetails p{
+    margin-top:0;
+    margin-bottom: 20px;
+}
+.rightDetails {  
+    height: 200px;
+    width: 300px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+
