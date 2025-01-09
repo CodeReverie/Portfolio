@@ -20,8 +20,6 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.remove('show');
             entry.target.classList.remove('moveright');
             entry.target.classList.remove('moveleft');
-          
-            
         }
     });
 });

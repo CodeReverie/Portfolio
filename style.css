@@ -39,8 +39,7 @@
 }
 
 
-body {
-    
+body { 
   background-color: #0d0c11;
   color: #fff;
   font-family: 'Merriweather', serif;
@@ -131,7 +130,7 @@ section{
     min-height: 101vh;
 }
 .content{
-    width: 75%;
+    width:1500px;
     max-width: 100%;
 }
 .content h1 {
@@ -144,6 +143,7 @@ section{
     margin-bottom:30px;
     text-align: justify;
 }
+
 .hidden{ /* before */
     opacity: 0;
     transition: all 1s;
@@ -172,15 +172,8 @@ section{
 }
 
 
-
-
-
-
-
-
-
-
-.interest{display: grid;
+.interest{
+    display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 50px; 
 }
@@ -196,6 +189,7 @@ section{
     -webkit-backdrop-filter: blur( 1px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+
 }
 .box h1{
     margin-top: 10px;
@@ -205,6 +199,75 @@ section{
     font-size:17px;
     text-align: justify;
 }
+
+
+/* Flipflop 1==============================================================================*/
+.boxcard{
+    position:absolute;
+    width: 95%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    left:10px; 
+}
+.boxcard:hover{
+transform:rotateY(180deg);
+}
+.front1{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+   
+    color:#fff;
+}
+.back1{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  
+    color:#fff;
+    transform:rotateY(180deg);
+}
+
+/* Flipflop ==============================================================================*/
+.flipcontainer{
+    position:relative;
+    width: 250px;
+    height: 320px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.flipcard{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+.flipcard:hover{
+transform:rotateY(180deg);
+}
+.front{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: rgb(119, 193, 247);
+    color:#fff;
+}
+.back{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: rgb(161, 53, 255);
+    color:#fff;
+    transform:rotateY(180deg);
+}
+
 
 
 /* First Page ==================================================== */
@@ -267,48 +330,10 @@ section{
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1; /* Behind all other elements */
+    z-index: -2; /* Behind all other elements */
     background-color: #0d0c11; /* Optional: match background color */
 }
 
-/* Flipflop ==============================================================================*/
-.flipcontainer{
-    position:relative;
-    width: 250px;
-    height: 320px;
-    background-color: aquamarine;
-    margin-bottom: 0px;
-    margin-top: 0px;
-}
-.flipcard{
-    position:absolute;
-    width: 100%;
-    height: 100%;
-    background-color: aquamarine;
-    transform-style: preserve-3d;
-    transition: all 0.5s ease;
-}
-.flipcard:hover{
-transform:rotateY(180deg);
-}
-.front{
-    position:absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background-color: rgb(119, 193, 247);
-    color:#fff;
-}
-.back{
-    position:absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background-color: rgb(161, 53, 255);
-    color:#fff;
-    transform:rotateY(180deg);
-
-}
 
 /* Contact ===============================================================================*/
 .line-divider {
