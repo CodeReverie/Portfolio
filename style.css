@@ -204,11 +204,11 @@ section{
 /* Flipflop 1==============================================================================*/
 .boxcard{
     position:absolute;
-    width: 95%;
+    width: 90%;
     height: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
-    left:10px; 
+    left:20px; 
 }
 .boxcard:hover{
 transform:rotateY(180deg);
